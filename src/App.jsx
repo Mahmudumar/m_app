@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import Search from './components/Search.jsx'
-import Spinner from './components/Spinner.jsx'
 import MovieCard from './components/MovieCard.jsx'
-import { useDebounce } from 'react-use'
+import Spinner from './components/Spinner.jsx'
 import { getTrendingMovies, updateSearchCount } from './appwrite.js'
+import { useDebounce } from 'react-use'
 
 const API_BASE_URL = 'https://api.themoviedb.org/3';
 
@@ -92,14 +92,14 @@ const App = () => {
       <div className="wrapper">
         <header>
           <img src="./hero.png" alt="Hero Banner" />
-          <h1>Find <span className="text-gradient">Movies</span> You'll Enjoy Without the Hassle</h1>
+          <h1>Find <span className="text-gradient">Moovys</span> You'll Enjoy Without the Hassle</h1>
 
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </header>
 
         {trendingMovies.length > 0 && (
           <section className="trending">
-            <h2>Trending Movies</h2>
+            <h2>Trending Moovys</h2>
 
             <ul>
               {trendingMovies.map((movie, index) => (
@@ -113,7 +113,7 @@ const App = () => {
         )}
 
         <section className="all-movies">
-          <h2>All Movies</h2>
+          <h2>All moovys</h2>
 
           {isLoading ? (
             <Spinner />
